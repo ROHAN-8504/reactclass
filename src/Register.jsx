@@ -37,17 +37,56 @@ function Register() {
 
   return (
     <>
-    <form onSubmit={senddetails}>
-   <input  onChange={(e)=>{setusername(e.target.value)}}            type="text" placeholder="username" /><br />
-   <p>{validate(userschema,username)}</p>
-   <input   onChange={(e)=>{setpassword(e.target.value)}}                                              type="password" placeholder="password" /><br />
-      <p>{validate(passwordchema,password)}</p>
-   <input   onChange={(e)=>{setemail(e.target.value)}}                                type="text" placeholder="email" /><br />
-      <p>{validate(emailschema,email)}</p>
-   <input    onChange={(e)=>{setrole(e.target.value)}}                                             type="text" placeholder="role" /><br />
-        <p>{validate(roleschema,role)}</p>
-     <button type='submit'  >register</button>
-    </form>
+      <section className="register-page">
+        <form className="register-card" onSubmit={senddetails}>
+          <div className="register-heading">
+            <p>Create account</p>
+            <h1>Register</h1>
+          </div>
+
+          <label className="register-field">
+            <span>Username</span>
+            <input
+              onChange={(e)=>{setusername(e.target.value)}}
+              type="text"
+              placeholder="Enter username"
+            />
+            <p>{validate(userschema,username)}</p>
+          </label>
+
+          <label className="register-field">
+            <span>Password</span>
+            <input
+              onChange={(e)=>{setpassword(e.target.value)}}
+              type="password"
+              placeholder="Enter password"
+            />
+            <p>{validate(passwordchema,password)}</p>
+          </label>
+
+          <label className="register-field">
+            <span>Email</span>
+            <input
+              onChange={(e)=>{setemail(e.target.value)}}
+              type="email"
+              placeholder="Enter email"
+            />
+            <p>{validate(emailschema,email)}</p>
+          </label>
+
+          <label className="register-field">
+            <span>Role</span>
+            <input
+              onChange={(e)=>{setrole(e.target.value)}}
+              type="text"
+              placeholder="Enter role"
+            />
+            <p>{validate(roleschema,role)}</p>
+          </label>
+
+          <button className="register-button" type="submit">Register</button>
+        </form>
+      </section>
     </>
   )
 }
