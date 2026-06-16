@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
-import "./Header.css";
+import "./header.css";
 
 function Header({ setsearchquery }) {
-  let togglemode = () => {
+  const togglemode = () => {
     document.body.classList.toggle("change");
   };
 
   return (
     <header className="header">
-      <img
-        className="animate-bounce logo"
-        src="https://zerodha.com/static/images/logo.svg"
-        alt="logo"
-      />
+      <Link to="/" className="logo-link">
+        <img
+          className="logo"
+          src="https://zerodha.com/static/images/logo.svg"
+          alt="Zerodha Logo"
+        />
+      </Link>
 
       <input
-        className="search-input"
-        onChange={(e) => {
-          setsearchquery(e.target.value);
-        }}
+        className="search-box"
         type="text"
         placeholder="Search products..."
+        onChange={(e) => setsearchquery(e.target.value)}
       />
 
       <nav className="nav-links">
@@ -29,9 +29,7 @@ function Header({ setsearchquery }) {
         <Link to="/products">Products</Link>
         <Link to="/auth/login">Signin</Link>
 
-        <button className="theme-btn" onClick={togglemode}>
-          Dark/Light
-        </button>
+        <button onClick={togglemode}>Dark/Light</button>
       </nav>
     </header>
   );
