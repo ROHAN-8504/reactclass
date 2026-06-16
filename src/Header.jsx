@@ -1,30 +1,40 @@
-import {Link} from "react-router-dom"
-function Header({setsearchquery}) {
+import { Link } from "react-router-dom";
+import "./Header.css";
 
-  let togglemode=()=>{
-  document.body.classList.toggle("change")
-  }
+function Header({ setsearchquery }) {
+  let togglemode = () => {
+    document.body.classList.toggle("change");
+  };
 
   return (
-    <>
-     <header style={{display:"flex",justifyContent:"space-evenly"}}   >
-    <img  class='animate-bounce'     height={30} width={100}      src="https://zerodha.com/static/images/logo.svg" alt="logo" />
+    <header className="header">
+      <img
+        className="animate-bounce logo"
+        src="https://zerodha.com/static/images/logo.svg"
+        alt="logo"
+      />
 
-    <input  onChange={(e)=>{setsearchquery(e.target.value)}}  type="text" placeholder="search products..." />
+      <input
+        className="search-input"
+        onChange={(e) => {
+          setsearchquery(e.target.value);
+        }}
+        type="text"
+        placeholder="Search products..."
+      />
 
-    <nav style={{display:"flex",gap:"20px",alignItems:"center"}}>
-  <Link to={'/auth/register'}  > <a href="">Signup</a></Link>
-  <Link to={'/about'}  ><a href="">About</a></Link>
-  <Link to={'/products'}    ><a href="">Products</a></Link>
-  <Link to={'/auth/login'}     ><a href="">signin</a></Link>
+      <nav className="nav-links">
+        <Link to="/auth/register">Signup</Link>
+        <Link to="/about">About</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/auth/login">Signin</Link>
 
-
-    <button onClick={togglemode} >dark/light</button>
-    </nav>
-
+        <button className="theme-btn" onClick={togglemode}>
+          Dark/Light
+        </button>
+      </nav>
     </header>
-    </>
-  )
+  );
 }
 
-export default Header
+export default Header;
