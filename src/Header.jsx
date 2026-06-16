@@ -1,9 +1,10 @@
-import {Link} from "react-router-dom"
-function Header({setsearchquery}) {
+import { Link } from "react-router-dom";
+import "./Header.css";
 
-  let togglemode=()=>{
-  document.body.classList.toggle("change")
-  }
+function Header({ setsearchquery }) {
+  let togglemode = () => {
+    document.body.classList.toggle("change");
+  };
 
   return (
     <>
@@ -23,8 +24,7 @@ function Header({setsearchquery}) {
     </nav>
 
     </header>
-    </>
-  )
+  );
 }
 
-export default Header
+export default Header;
