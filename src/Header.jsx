@@ -7,32 +7,22 @@ function Header({ setsearchquery }) {
   };
 
   return (
-    <header className="header">
-      <img
-        className="animate-bounce logo"
-        src="https://zerodha.com/static/images/logo.svg"
-        alt="logo"
-      />
+    <>
+     <header style={{display:"flex",justifyContent:"space-evenly"}}   >
+    <Link to={'/'}><img  class='animate-bounce'     height={30} width={100}      src="https://zerodha.com/static/images/logo.svg" alt="logo" /></Link>
 
-      <input
-        className="search-input"
-        onChange={(e) => {
-          setsearchquery(e.target.value);
-        }}
-        type="text"
-        placeholder="Search products..."
-      />
+    <input  onChange={(e)=>{setsearchquery(e.target.value)}}  type="text" placeholder="search products..." />
 
-      <nav className="nav-links">
-        <Link to="/auth/register">Signup</Link>
-        <Link to="/about">About</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/auth/login">Signin</Link>
+    <nav style={{display:"flex",gap:"20px",alignItems:"center"}}>
+  <Link to={'/auth/register'}  > <a href="">Signup</a></Link>
+  <Link to={'/about'}  ><a href="">About</a></Link>
+  <Link to={'/products'}    ><a href="">Products</a></Link>
+  <Link to={'/auth/login'}     ><a href="">signin</a></Link>
 
-        <button className="theme-btn" onClick={togglemode}>
-          Dark/Light
-        </button>
-      </nav>
+
+    <button onClick={togglemode} >dark/light</button>
+    </nav>
+
     </header>
   );
 }
