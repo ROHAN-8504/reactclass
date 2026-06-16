@@ -20,7 +20,14 @@ return p.title.toLowerCase().includes(searchquery.toLowerCase())
 
   return (
     <>
-    <div style={{display:"flex",flexWrap:"wrap",justifyContent:"space-around",gap:'20px'}}   >
+    <div style={{
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "25px",
+    padding: "20px",
+    backgroundColor: "#f5f5f5",
+  }}   >
 
     {
         filteredproducts.map((p)=>{
