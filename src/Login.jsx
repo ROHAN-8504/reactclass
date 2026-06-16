@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
-import "./Login.css";
+import "./login.css";
 
 let userschema = z
   .string()
