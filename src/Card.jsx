@@ -1,17 +1,21 @@
+import "./card.css";
 
-function Card({image,title,price}) {
+function Card({ image, title, price }) {
+  const addToCart = () => {
+    alert(`${title} added to cart`);
+  };
+
   return (
-    <>
-    <div style={{border:"1px red solid",
-        width:"400px",
-        textAlign:"center",
-        borderRadius:"10px"}}>
-     <img  height={250} width={250} src={image} alt="" />
-     <h1>{title}</h1>
-     <h2>{price}</h2>
+    <div>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <h2>₹{price}</h2>
+
+      <button className="cart-btn" onClick={addToCart}>
+  Add to Cart
+</button>
     </div>
-    </>
-  )
+  );
 }
 
-export default Card
+export default Card;
