@@ -44,7 +44,7 @@ function Register() {
     emailError ||
     roleError
 
-  const sendDetails = async (event) => {
+  const senddetails = async (event) => {
     event.preventDefault()
     setMessage("")
     setMessageType("")
@@ -83,7 +83,7 @@ function Register() {
         <h1>Create account</h1>
         <p>Register for access to our product catalog and personalized shopping.</p>
 
-        <form className="register-form" onSubmit={sendDetails} noValidate>
+        <form className="register-form" onSubmit={senddetails} noValidate>
           <div className="form-group">
             <label htmlFor="username">Username</label>
             <input

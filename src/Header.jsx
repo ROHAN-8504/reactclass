@@ -8,9 +8,9 @@ function Header({setsearchquery}) {
   return (
     <>
      <header style={{display:"flex",justifyContent:"space-evenly"}}   >
-    <img  class='animate-bounce'     height={30} width={100}      src="https://zerodha.com/static/images/logo.svg" alt="logo" />
+    <img style={{ border: '2px solid #0f0d0d' , borderRadius: '5px' }}  class='animate-bounce'     height={30} width={100}      src="https://zerodha.com/static/images/logo.svg" alt="logo" />
 
-    <input  onChange={(e)=>{setsearchquery(e.target.value)}}  type="text" placeholder="search products..." />
+    <input style={{ border: '2px solid #0f0d0d', borderRadius: '5px' }} onChange={(e)=>{setsearchquery(e.target.value)}}  type="text" placeholder="    search products..." />
 
     <nav style={{display:"flex",gap:"20px",alignItems:"center"}}>
   <Link to={'/auth/register'}  > <a href="">Signup</a></Link>
